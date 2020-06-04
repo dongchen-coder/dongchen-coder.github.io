@@ -1,0 +1,245 @@
+<HTML>
+<HEAD>
+<TITLE>Dong Chen's URCS Home Page</TITLE>
+
+<style>
+body {
+    font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.main {
+    margin-left: 160px; /* Same as the width of the sidenav */
+    font-size: 20px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+</style>
+
+</HEAD>
+
+
+<BODY>
+<!-- IMG ALIGN=TOP SRC="/images/urcslogo.gif"-->
+
+<div class="sidenav">
+  <a href="#about">About</a>
+  <a href="#research">Research</a>
+  <a href="#publication">Publications</a>
+  <a href="#course">Courses</a>
+</div>
+
+<div id="about" class="main">
+<table width="100%">
+<tr>
+
+<td width="50%">
+    <H1><font size="+2">D<small>ong</small> C<small>hen</small></font> <br>
+    </H1>
+<P>
+<IMG ALIGN=TOP SRC="dong_chen.jpg" style="width:500px;"><br>
+
+<address>
+Room 2209, Wegmans Hall<br>
+Department of Computer Science<br>
+University of Rochester<br>
+Rochester, NY, 14627<br>
+Email: dchen39 AT cs DOT rochester DOT edu <br>
+</address>
+<a href="quotes.html">Quotes I like</a>
+</P>
+</td>
+
+<td align="center">
+</td>
+</tr>
+</table>
+
+
+</UL>
+<H3> Education </H3>
+
+<ul>
+
+<li>
+
+University of Rochester, 2014-Current<br>
+PhD. Department of Computer Science. 
+</li>
+
+<br>
+
+<li>
+National University of Defense Technology. 2011-2013<br>
+M.S. Department of Computer Science.
+
+</li>
+
+<br>
+
+<li>
+National University of Defense Technology. 2007-2011<br>
+B.S. Department of Computer Science.
+</li>
+
+<br>
+
+</ul>
+
+<H3 id="research">Research</H3>
+<p>
+
+<b>Static locality analysis for parallel code (Ongoing)</b><br>
+This work is aiming to provide a locality model that can be used to predict the cache performance of parallel codes (OpenCL, CnC, etc) statically in compile time. A static model based on array index analysis and footprint locality theory is built with consideration of execution orders of parallel tasks. This model is implemented as a LLVM analysis pass. It can potentially help performance tuning for parallel programs and help to improve the task scheduling.
+<br>
+<b>Write locality and its optimizations for persistent memory</b><br>
+Persistent memory is a disruptive technology that drastically reduces memory cost and static power but introduces the problems of slow writes and limited write endurance. An effective solution is caching. However, existing cache has been designed for fast reads. It does not minimize the number of writebacks from cache to memory. This work proposes a metric to quantify the write locality and a theory to analyze and optimize write locality.  It includes a linear-time algorithm to predict the write-back frequency for all cache sizes.  In shared cache, it predicts the number of writebacks for co-run programs based on sole-run profiling.
+<br>
+<b>OpenCL Performance Portability</b><br>
+Targeting on different computing devices with different architectures (CPU, GPU, MIC),
+optimizations to improve performance of OpenCL programs are summarized. A performance
+concerned code transformation (from fine-grained program to coarse-grained program) is being
+studied.<br />
+</p>
+
+<H3 id="publication"> Publications </H3>
+
+<ul>
+
+<li>
+<b>[LCPC'19] CLAM: Compiler Leasing of Accelerator Memory</b><br>
+Chen Ding, <em>Dong Chen</em>, Dorin Patru<br>
+The 32nd Workshop on Languages and Compilers for Parallel Computing
+</li>
+
+<li>
+<b>[MEMSYS'19] Statistical Caching for Near Memory Management</b><br>
+<em>Dong Chen</em>, Fangzhou Liu, Mingyang Jiao, Chen Ding, Sreepathi Pai<br>
+The 5th International Symposium on Memory Systems<br>
+</li>
+
+<li>
+<b>[PLDI'18] Locality Analysis through Static Parallel Sampling</b><br>
+<em>Dong Chen</em>, Fangzhou Liu, Chen Ding, Sreepathi Pai<br>
+The 39th ACM SIGPLAN Conference on Programming Language Design and Implementation <br>
+<a href="./doc/PLDI_camera-ready_final.pdf"><em>Preprint paper</em></a>  <a href="https://github.com/dongchen-coder/symFP"><em>Source code</em></a>   <br>
+</li>
+
+<li>
+<b>[LCPC'17] POSTER: Static Reuse Time Analysis Using Dependence Distance</b><br>
+<em>Dong Chen</em>, Fangzhou Liu, Chen Ding, Chucheow Lim<br>
+The 30th International Workshop on Languages and Compilers for Parallel Computing <br>
+<a href="./doc/LCPC_poster_paper.pdf"><em>Preprint paper</em></a>   <a href="./doc/LCPC_poster.pdf"><em>Poster</em></a> <br>
+</li>
+
+<li>
+<b>[TACO'17] Cache Exclusivity and Sharing: Theory and Optimization</b><br>
+Chencheng Ye, Chen Ding, Hao Luo, Jacob Brock, <em>Dong Chen</em>, Hai Jin <br>
+ACM Transactions on Architecture and Code Optimization<br>
+</li>
+
+<li>
+<b>[TACO'17] LD: Low-Overhead GPU Race Detection Without Access Monitoring</b><br>
+Pengcheng Li, Xiaoyu Hu, <em>Dong Chen</em>, Jacob Brock, Hao Luo, Eddy Z Zhang, Chen Ding <br>
+ACM Transactions on Architecture and Code Optimization<br> 
+</li>
+
+<li>
+<b>[MEMSYS'16] Write Locality and Optimization for Persistent Memory</b><br>
+<em>Dong Chen</em>, Chencheng Ye, Chen Ding<br>
+The 2nd International Symposium on Memory Systems<br>
+</li>
+
+<li>
+<b>[FITEE'15] Improving performance portability for GPU-specific OpenCL kernels on multi-core/many-core CPUs by analysis-based transformations</b><br>
+Mei Wen, Da-fei Huang, Chang-qing Xun, <em>Dong Chen</em> <br>
+Frontiers of Information Technology and Electronic Engineering<br>
+</li>
+
+<li>
+<b>[Euro-Par'14] Automated Transformation of GPU-Specific OpenCL Kernels Targeting Performance Portability on Multi-Core/Many-Core CPUs.</b><br>
+Dafei Huang, Mei Wen, Changqing Xun, <em>Dong Chen</em>, Xing Cai, Yuran Qiao, Nan Wu, Chunyuan Zhang.<br>
+The 20th International European Conference on Parallel and Distributed Computing<br>
+</li>
+
+<li>
+<b>[JZU'13] Efficicent fine grained shared buffer management for multiple OpenCL devices.</b><br>
+Changqing Xun, <em>Dong Chen</em>, Qiang Lan, Chunyuan Zhang.<br>
+Journal of Zhejiang University-SCIENCE C (Computers and Electronics)<br>
+</li>
+
+<li>
+<b>[HPCC'13] Automatic mapping single-device OpenCL program to heterogeneous multi-device platform.</b><br>
+<em>Dong Chen</em>, Changqing Xun, Dafei Huang, Mei Wen, Chunyuan Zhang.<br>
+The 15th International Conference on High Performance Computing and Communications<br>
+</li>
+
+<li>
+<b>[ICCIP'13] Scalable Parallel Motion Estimation on Multi-GPU system.</b><br>
+<em>Dong Chen</em>, Huayou Su, Wen Mei, Lixuan Wang, Chunyuan Zhang.<br>
+International Conference on Communications and Information Processing<br>
+</li>
+
+<br>
+
+</ul>
+
+<H3 id="course">Courses</H3> 
+<b>Fall 2014:</b> CSC 400 (Problem seminar), CSC 453 (Dynamic language and software development), CSC 456 (Operating system), CSC 486 (Computational complexity) <br>
+<b>Spring 2015:</b> CSC 446 (Machine learning), CSC 484 (Advanced algorithm), CSC 579 (Cache memory) <br>
+<b>Fall 2015:</b> CSC 444 (Logical foundations of AI),  CSC 481 (Introduction to cryptography) <br>
+<b>Spring 2016:</b> CSC 458 (Parallel and distributed systems), CSC 455 (Software analysis and improvement) <br>
+<b>Fall 2017:</b> CSC 573 (Topics in Systems for Heterogeneous Architectures) <br>
+<hr>
+
+<a href="https://info.flagcounter.com/QJmT"><img src="https://s01.flagcounter.com/map/QJmT/size_s/txt_000000/border_CCCCCC/pageviews_0/viewers_0/flags_0/" alt="Flag Counter" border="0"></a>
+
+
+<p>
+<a href="http://lib.rochester.edu">UR Library</a> | 
+<a href="https://psportal.its.rochester.edu/psp/PAPRD/?cmd=login">UR HRMS</a> | 
+<a href="http://www.rochester.edu/athletics/facilities/hours.php">Gym Hours</a> | 
+<a href="http://www.rochester.edu/calendar/">Campus Calendar</a> |
+<a href="http://www.rochester.edu/registrar">UR Registrar</a> |
+<A HREF="/users">URCS People</A> |
+
+<A HREF="/">URCS Home Page</A> 
+
+</p>
+</center>
+
+ 
+
+</div>
+
+</BODY>
+</HTML>
+
+
