@@ -1,225 +1,179 @@
-<HTML>
-<HEAD>
-<TITLE>Dong Chen (陈 东)</TITLE>
+<!DOCTYPE html>
+<!--
+    Plain-Academic by Vasilios Mavroudis
+    Released under the  Simplified BSD License/FreeBSD (2-clause) License.
+    https://github.com/mavroudisv/plain-academic
+-->
 
-<style>
-body {
-    font-family: "Lato", sans-serif;
-}
-
-.sidenav {
-    height: 100%;
-    width: 160px;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    padding-top: 20px;
-}
-
-.sidenav a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-}
-
-.sidenav a:hover {
-    color: #f1f1f1;
-}
-
-.main {
-    margin-left: 160px; /* Same as the width of the sidenav */
-    font-size: 20px; /* Increased text to enable scrolling */
-    padding: 0px 10px;
-}
-
-@media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-}
-</style>
-
-</HEAD>
+<html lang="en">
+<head>
+  <title>Dong Chen (陈 东)</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
+</head>
+<body>
 
 
-<BODY>
-<!-- IMG ALIGN=TOP SRC="/images/urcslogo.gif"-->
+<!-- Navigation -->
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+		<ul class="nav navbar-nav">
+              <li><a href="/">Home</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#publications">Publications</a></li> 
+              <li><a href="files/cv_dchen.pdf">CV</a></li> 
+		</ul>
+	  </div>
+	</nav>
+	
 
-<div class="sidenav">
-  <a href="#about">About</a>
-  <a href="#research">Research</a>
-  <a href="#publication">Publications</a>
-</div>
+  
+  <!-- Page Content -->
+    <div class="container">
 
-<div id="about" class="main">
-<table width="100%">
-<tr>
+        <div class="row">
 
-<td width="50%">
-    <H1><font size="+2">D<small>ong</small> C<small>hen</small></font> <br>
-    </H1>
-<P>
-<IMG ALIGN=TOP SRC="dong_chen.jpg" style="width:500px;"><br>
+            <!-- Entries Column -->
+            <div class="col-md-8" style="height: 100vh;">
+                
+                <!-- Main Image -->
+                <img class="img-responsive" src="photo.gif" alt=""><br>
+                
+                <div style="margin-top:3%; text-align:justify;">                
+					<p> My current research focuses on static and dynamic program analysis on locality for both sequential and parallel programs. 
+						I have broad interests in system software (compilers and operating systems), parallel computing, memory management, and program synthesis. </p>
+				</div>
+            </div> 
 
-<address>
-Room 2209, Wegmans Hall<br>
-Department of Computer Science<br>
-University of Rochester<br>
-Rochester, NY, 14627<br>
-Email: dchen39 AT cs DOT rochester DOT edu <br>
-</address>
-<a href="quotes.html">Quotes I like</a>
-</P>
-</td>
+            <!-- Contact Info on the Sidebar -->
+            <div class="col-md-4">
+                <div style="font-family: 'Oswald', sans-serif; font-size: 32px;"><b>Dong Chen (陈 东)</b></div><br>
+                <p><b>jameschennerd at gmail dot com</b><br>
+                <!--
+				<p>Random Department<br>
+                University of Randomness<br>
+                Street<br>
+                City <br>
+                Country<br>
+                </p>
+				-->
+            </div>
+            
+            
+            <!-- Links on the Sidebar -->
+            <div class="col-md-4" style="margin-top:2%">
+              <dd><a href="https://scholar.google.com/citations?user=FJcl9EEAAAAJ&hl=en">Google Scholar</a></dd> 
+              <dd><a href="https://www.linkedin.com/in/dong-chen-23aa83ab">LinkedIn</a></dd>
+            </div>
+            
+			<!-- Projects -->
+            <div class="col-md-8" style="height: 100vh;">
+                <h2 id="projects">Projects</h2>
+				<strong>Static Locality Analysis</strong><br/>
+				<ul>
+				This project is aiming to build models and tools that can predict the cache performance of loop nests statically in compile time.
+				A static model based on array index analysis and footprint locality theory is built with consideration of program structures and execution orders of parallel tasks. 
+				Our tool is implemented as a LLVM analysis pass. It can potentially help performance tuning for parallel programs and help to improve the task scheduling. 
+				</ul>
 
-<td align="center">
-</td>
-</tr>
-</table>
+				<strong>Write Locality</strong><br/>
+                <ul>
+				Persistent memory is a disruptive technology that drastically reduces memory cost and static power but introduces the problems of slow writes and limited write endurance. 
+				An effective solution is caching. However, existing cache has been designed for fast reads. It does not minimize the number of writebacks from cache to memory. 
+				This project first defines a model to quantify the write locality. 
+				With the model, we design a linear-time algorithm to analyze write locality from access traces to predict the write-back frequency for all cache sizes.
+				In shared cache, we provide a dynamic programming algorithm to minimize the writebacks for co-run program based on sole-run profiling.
+                </ul>
 
+				<strong>OpenCL Performance Portibility</strong><br/>
+                <ul>
+				This project targets on different computing devices with different architectures (CPU, GPU, MIC), optimizations to improve performance of OpenCL programs are summarized. 
+				A performance concerned code transformation (from fine-grained program to coarse-grained program) is being studied.
+                </ul>
+			</div> 
 
-</UL>
-<H3> Education </H3>
+           
+            <!-- Publications -->
+            <div class="col-md-8" style="height: 100vh;">    
+                <h2 id="publications">Publications</h2>
+                
+                <strong>Selected Publications, the full list can be found in <a href="https://scholar.google.com/citations?user=FJcl9EEAAAAJ&hl=en">Google Scholar</a></strong><br/>
+				<ul>
+                <li class="paper" words="add, your, keywords, here"><a href="#">[LCPC'19] CLAM: Compiler Leasing of Accelerator Memory</a> <br>
+																				Chen Ding, <u>Dong Chen</u>, Dorin Patru <br>
+																				The 32nd Workshop on Languages and Compilers for Parallel Computing </li>
+				</ul>
+				
+				<ul>
+				<li class="paper" words="add, your, keywords, here"><a href="#">[MEMSYS'19] Statistical Caching for Near Memory Management</a> <br>
+                                                                                <u>Dong Chen</u>, Fangzhou Liu, Mingyang Jiao, Chen Ding, Sreepathi Pai <br>
+                                                                                The 5th International Symposium on Memory Systems</li>
+				</ul>
+			
+				<ul>
+                <li class="paper" words="add, your, keywords, here"><a href="#">[PLDI'18] Locality Analysis through Static Parallel Sampling</a> <br>
+                                                                                <u>Dong Chen</u>, Fangzhou Liu, Chen Ding, Sreepathi Pai<br>
+                                                                                The 39th ACM SIGPLAN Conference on Programming Language Design and Implementation </li>
+                </ul>
+		
+				<ul>
+                <li class="paper" words="add, your, keywords, here"><a href="#">[LCPC'17] POSTER: Static Reuse Time Analysis Using Dependence Distance</a> <br>
+                                                                                <u>Dong Chen</u>, Fangzhou Liu, Chen Ding, Chucheow Lim<br>
+                                                                                The 30th International Workshop on Languages and Compilers for Parallel Computing</li>
+                </ul>
 
-<ul>
+				<ul>
+                <li class="paper" words="add, your, keywords, here"><a href="#">[TACO'17] Cache Exclusivity and Sharing: Theory and Optimization</a> <br>
+                                                                                Chencheng Ye, Chen Ding, Hao Luo, Jacob Brock, <u>Dong Chen</u>, Hai Jin <br>
+                                                                                ACM Transactions on Architecture and Code Optimization</li>
+                </ul>
+				
+				<ul>
+                <li class="paper" words="add, your, keywords, here"><a href="#">[TACO'17] LD: Low-Overhead GPU Race Detection Without Access Monitoring</a> <br>
+                                                                                Pengcheng Li, Xiaoyu Hu, <u>Dong Chen</u>, Jacob Brock, Hao Luo, Eddy Z Zhang, Chen Ding<br>
+                                                                                ACM Transactions on Architecture and Code Optimization</li>
+                </ul>
 
-<li>
+				<ul>
+                <li class="paper" words="add, your, keywords, here"><a href="#">[MEMSYS'16] Write Locality and Optimization for Persistent Memory</a> <br>
+                                                                                <u>Dong Chen</u>, Chencheng Ye, Chen Ding<br>
+                                                                                The 2nd International Symposium on Memory Systems</li>
+                </ul>
 
-University of Rochester, 2014-Current<br>
-PhD. Department of Computer Science. 
-</li>
+				<ul>
+                <li class="paper" words="add, your, keywords, here"><a href="#">[Euro-Par'14] Automated Transformation of GPU-Specific OpenCL Kernels Targeting Performance Portability on Multi-Core/Many-Core CPUs</a> <br>
+                                                                                Dafei Huang, Mei Wen, Changqing Xun, <u>Dong Chen</u>, Xing Cai, Yuran Qiao, Nan Wu, Chunyuan Zhang<br>
+                                                                                The 20th International European Conference on Parallel and Distributed Computing</li>
+                </ul>
 
-<br>
+				<ul>
+                <li class="paper" words="add, your, keywords, here"><a href="#">[HPCC'13] Automatic mapping single-device OpenCL program to heterogeneous multi-device platform</a> <br>
+                                                                                <u>Dong Chen</u>, Changqing Xun, Dafei Huang, Mei Wen, Chunyuan Zhang<br>
+                                                                                The 15th International Conference on High Performance Computing and Communications</li>
+                </ul>
 
-<li>
-National University of Defense Technology. 2011-2013<br>
-M.S. Department of Computer Science.
+				<!--
+                <strong>Technical Reports</strong><br/>
+                <ul>
+                <li class="paper" words="add, your, keywords, here"><a href="#">Full title</a>. Details of the report</li>
+                </ul>
+				-->
+            </div>
 
-</li>
-
-<br>
-
-<li>
-National University of Defense Technology. 2007-2011<br>
-B.S. Department of Computer Science.
-</li>
-
-<br>
-
-</ul>
-
-<H3 id="research">Research</H3>
-<p>
-
-<b>Static locality analysis for parallel code (Ongoing)</b><br>
-This work is aiming to provide a locality model that can be used to predict the cache performance of parallel codes (OpenCL, CnC, etc) statically in compile time. A static model based on array index analysis and footprint locality theory is built with consideration of execution orders of parallel tasks. This model is implemented as a LLVM analysis pass. It can potentially help performance tuning for parallel programs and help to improve the task scheduling.
-<br>
-<b>Write locality and its optimizations for persistent memory</b><br>
-Persistent memory is a disruptive technology that drastically reduces memory cost and static power but introduces the problems of slow writes and limited write endurance. An effective solution is caching. However, existing cache has been designed for fast reads. It does not minimize the number of writebacks from cache to memory. This work proposes a metric to quantify the write locality and a theory to analyze and optimize write locality.  It includes a linear-time algorithm to predict the write-back frequency for all cache sizes.  In shared cache, it predicts the number of writebacks for co-run programs based on sole-run profiling.
-<br>
-<b>OpenCL Performance Portability</b><br>
-Targeting on different computing devices with different architectures (CPU, GPU, MIC),
-optimizations to improve performance of OpenCL programs are summarized. A performance
-concerned code transformation (from fine-grained program to coarse-grained program) is being
-studied.<br />
-</p>
-
-<H3 id="publication"> Publications </H3>
-
-<ul>
-
-<li>
-<b>[LCPC'19] CLAM: Compiler Leasing of Accelerator Memory</b><br>
-Chen Ding, <em>Dong Chen</em>, Dorin Patru<br>
-The 32nd Workshop on Languages and Compilers for Parallel Computing
-</li>
-
-<li>
-<b>[MEMSYS'19] Statistical Caching for Near Memory Management</b><br>
-<em>Dong Chen</em>, Fangzhou Liu, Mingyang Jiao, Chen Ding, Sreepathi Pai<br>
-The 5th International Symposium on Memory Systems<br>
-</li>
-
-<li>
-<b>[PLDI'18] Locality Analysis through Static Parallel Sampling</b><br>
-<em>Dong Chen</em>, Fangzhou Liu, Chen Ding, Sreepathi Pai<br>
-The 39th ACM SIGPLAN Conference on Programming Language Design and Implementation <br>
-<a href="./doc/PLDI_camera-ready_final.pdf"><em>Preprint paper</em></a>  <a href="https://github.com/dongchen-coder/symFP"><em>Source code</em></a>   <br>
-</li>
-
-<li>
-<b>[LCPC'17] POSTER: Static Reuse Time Analysis Using Dependence Distance</b><br>
-<em>Dong Chen</em>, Fangzhou Liu, Chen Ding, Chucheow Lim<br>
-The 30th International Workshop on Languages and Compilers for Parallel Computing <br>
-<a href="./doc/LCPC_poster_paper.pdf"><em>Preprint paper</em></a>   <a href="./doc/LCPC_poster.pdf"><em>Poster</em></a> <br>
-</li>
-
-<li>
-<b>[TACO'17] Cache Exclusivity and Sharing: Theory and Optimization</b><br>
-Chencheng Ye, Chen Ding, Hao Luo, Jacob Brock, <em>Dong Chen</em>, Hai Jin <br>
-ACM Transactions on Architecture and Code Optimization<br>
-</li>
-
-<li>
-<b>[TACO'17] LD: Low-Overhead GPU Race Detection Without Access Monitoring</b><br>
-Pengcheng Li, Xiaoyu Hu, <em>Dong Chen</em>, Jacob Brock, Hao Luo, Eddy Z Zhang, Chen Ding <br>
-ACM Transactions on Architecture and Code Optimization<br> 
-</li>
-
-<li>
-<b>[MEMSYS'16] Write Locality and Optimization for Persistent Memory</b><br>
-<em>Dong Chen</em>, Chencheng Ye, Chen Ding<br>
-The 2nd International Symposium on Memory Systems<br>
-</li>
-
-<li>
-<b>[FITEE'15] Improving performance portability for GPU-specific OpenCL kernels on multi-core/many-core CPUs by analysis-based transformations</b><br>
-Mei Wen, Da-fei Huang, Chang-qing Xun, <em>Dong Chen</em> <br>
-Frontiers of Information Technology and Electronic Engineering<br>
-</li>
-
-<li>
-<b>[Euro-Par'14] Automated Transformation of GPU-Specific OpenCL Kernels Targeting Performance Portability on Multi-Core/Many-Core CPUs.</b><br>
-Dafei Huang, Mei Wen, Changqing Xun, <em>Dong Chen</em>, Xing Cai, Yuran Qiao, Nan Wu, Chunyuan Zhang.<br>
-The 20th International European Conference on Parallel and Distributed Computing<br>
-</li>
-
-<li>
-<b>[JZU'13] Efficicent fine grained shared buffer management for multiple OpenCL devices.</b><br>
-Changqing Xun, <em>Dong Chen</em>, Qiang Lan, Chunyuan Zhang.<br>
-Journal of Zhejiang University-SCIENCE C (Computers and Electronics)<br>
-</li>
-
-<li>
-<b>[HPCC'13] Automatic mapping single-device OpenCL program to heterogeneous multi-device platform.</b><br>
-<em>Dong Chen</em>, Changqing Xun, Dafei Huang, Mei Wen, Chunyuan Zhang.<br>
-The 15th International Conference on High Performance Computing and Communications<br>
-</li>
-
-<li>
-<b>[ICCIP'13] Scalable Parallel Motion Estimation on Multi-GPU system.</b><br>
-<em>Dong Chen</em>, Huayou Su, Wen Mei, Lixuan Wang, Chunyuan Zhang.<br>
-International Conference on Communications and Information Processing<br>
-</li>
-
-<br>
-
-</ul>
-
-<p>
-
-</p>
-</center>
-
- 
-
-</div>
-
-</BODY>
-</HTML>
+            
+        </div>
 
 
+    </div>
+    <!-- /.container -->
+    
+    <!-- Other people may like it too! -->
+    <a style="color:#b5bec9;font-size:0.8em; float:right;" href="https://github.com/mavroudisv/plain-academic">Plain Academic</a> 
+    
+</body>
+
+</html>
