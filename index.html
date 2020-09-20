@@ -83,23 +83,36 @@
                 <h2 id="projects">Projects</h2>
 				
 				<!-- <dd><a href="./staticLocalityAnalysis.html"><strong>Static Locality Analysis</strong></a></dd><br/> -->
-				<strong>Static Locality Analysis</strong><br/>
+				
+				<strong>Program synthesis for locality analysis </strong><br/> 			
 				<ul>
-				This project is aiming to build models and tools that can predict the cache performance of loop nests statically in compile time.
-				A static model based on array index analysis and footprint locality theory is built with consideration of program structures and execution orders of parallel tasks. 
-				Our tool is implemented as a LLVM analysis pass. It can potentially help performance tuning for parallel programs and help to improve the task scheduling. 
+				Program synthesis moves programming to a higher level by coding intuitions instead of algorithm details.
+				It also can be seen as extanding compiling with searching, which changes the way we design program optimization passes in compiler.
+				This project is trying to synthesis for static locality analysis.<a href="https://github.com/dongchen-coder/symRIByInputOuputExamples">Source Code</a>
 				</ul>
 
-				<strong>Write Locality</strong><br/>
+				<strong>Compiler Assigned Reference Leasing</strong> <a href="#LCPC19">[LCPC'19]</a> <a href="#MEMSYS19">[MEMSYS'19]</a> <a href="#MEMSYS20">[MEMSYS'20]</a><br/> 
+				<ul>
+				Conventional compilers usually optimize cache performance by reducing the memory footprint, as it has limited or no control of the data replacements in cache.
+				This project is trying to enable the fine-grained replacement control by program or compiler with lease cache.
+				A hardware prototype of lease cache and a compiler pass to assign leases for references is designed.<a href="https://github.com/dongchen-coder/CLAM">Source code</a>
+				</ul>
+
+				<strong>Static Sampling for Locality Analysis</strong> <a href="#PLDI18">[PLDI'18]</a> <a href="#PPOPP20">[PPoPP'20-poster]</a> <br/>
+				<ul>
+				This project builds a compiler tool that predicts the cache performance of compiler-time enumerable loop nests statically.
+				The tool constructs a specialized version of the loops to sampling reuse intervals and it is implemented as a LLVM analysis pass.
+				This technique can also be applied to parallelized loops, such as CUDA kernels and OpenMP. <a href="https://github.com/dongchen-coder/symFP">Source Code</a>
+				</ul>
+
+				<strong>Write Locality</strong> <a href="#MEMSYS16">[MEMSYS'16]</a><br/>
                 <ul>
-				Persistent memory is a disruptive technology that drastically reduces memory cost and static power but introduces the problems of slow writes and limited write endurance. 
-				An effective solution is caching. However, existing cache has been designed for fast reads. It does not minimize the number of writebacks from cache to memory. 
-				This project first defines a model to quantify the write locality. 
-				With the model, we design a linear-time algorithm to analyze write locality from access traces to predict the write-back frequency for all cache sizes.
-				In shared cache, we provide a dynamic programming algorithm to minimize the writebacks for co-run program based on sole-run profiling.
+				This project proposes a locality model for writebacks. As persistent memory has limited write endurance, quantify writebacks from the cache can guide the optimizations for writes.
+				It provides a linear-time algorithm to analyze writebacks for all all cache sizes and a dynamic programming algorithm to minimize the writebacks for co-run program based on sole-run profiling.
+				<a href="https://github.com/dongchen-coder/tunableOCLbenchmarks/blob/master/utilities/wb.h">Source Code</a>
                 </ul>
 
-				<strong>OpenCL Performance Portibility</strong><br/>
+				<strong>OpenCL Performance Portibility</strong> <a href="#HPCC13">[HPCC'13]</a><a href="#EUROPAR14">[Euro-Par'14]</a> <br/>
                 <ul>
 				This project targets on different computing devices with different architectures (CPU, GPU, MIC), optimizations to improve performance of OpenCL programs are summarized. 
 				A performance concerned code transformation (from fine-grained program to coarse-grained program) is being studied.
@@ -114,61 +127,67 @@
                 <strong>Selected Publications, the full list can be found in <a href="https://scholar.google.com/citations?user=FJcl9EEAAAAJ&hl=en">Google Scholar</a></strong><br/>
 				
 				<ul>
-                <li class="paper" words="add, your, keywords, here"><a href="#">[PPoPP'20-poster] PLUM: static parallel program locality analysis under uniform multiplexing</a> <br>
+				<li class="paper" words="MEMSYS20">         <a id="MEMSYS20" href="#">[MEMSYS'20 (to appear)] CLAM: Compiler Lease of Cache Memory</a> <br>
+                                                                                Ian Prechtl, Ben Reber, Chen Ding, Dorin Patru, <u>Dong Chen</u> <br>
+                                                                                The 6th International Symposium on Memory Systems </li>
+				</ul>
+
+				<ul>
+                <li class="paper" words="PPoPP20">         <a id="PPOPP20" href="#">[PPoPP'20-poster] PLUM: static parallel program locality analysis under uniform multiplexing</a> <br>
                                                                                 Fangzhou Liu, <u>Dong Chen</u>, Wesley Smith, Chen Ding <br>
                                                                                 the 25th ACM SIGPLAN Symposium on Principles and Practice of Parallel Programming </li>
                 </ul>
 
 				<ul>
-                <li class="paper" words="add, your, keywords, here"><a href="#">[LCPC'19] CLAM: Compiler Leasing of Accelerator Memory</a> <br>
+                <li class="paper" words="LCPC'19">         <a id="LCPC19" href="#">[LCPC'19] CLAM: Compiler Leasing of Accelerator Memory</a> <br>
 																				Chen Ding, <u>Dong Chen</u>, Dorin Patru <br>
 																				The 32nd Workshop on Languages and Compilers for Parallel Computing </li>
 				</ul>
 				
 				<ul>
-				<li class="paper" words="add, your, keywords, here"><a href="#">[MEMSYS'19] Statistical Caching for Near Memory Management</a> <br>
+				<li class="paper" words="MEMSYS'19">       <a id="MEMSYS19" href="#">[MEMSYS'19] Statistical Caching for Near Memory Management</a> <br>
                                                                                 <u>Dong Chen</u>, Fangzhou Liu, Mingyang Jiao, Chen Ding, Sreepathi Pai <br>
                                                                                 The 5th International Symposium on Memory Systems</li>
 				</ul>
 			
 				<ul>
-                <li class="paper" words="add, your, keywords, here"><a href="#">[PLDI'18] Locality Analysis through Static Parallel Sampling</a> <br>
+                <li class="paper" words="PLDI'18">         <a id="PLDI18" href="#">[PLDI'18] Locality Analysis through Static Parallel Sampling</a> <br>
                                                                                 <u>Dong Chen</u>, Fangzhou Liu, Chen Ding, Sreepathi Pai<br>
                                                                                 The 39th ACM SIGPLAN Conference on Programming Language Design and Implementation </li>
                 </ul>
 		
 				<ul>
-                <li class="paper" words="add, your, keywords, here"><a href="#">[LCPC'17] POSTER: Static Reuse Time Analysis Using Dependence Distance</a> <br>
+                <li class="paper" words="LCPC'17">         <a id="LCPC17" href="#">[LCPC'17] POSTER: Static Reuse Time Analysis Using Dependence Distance</a> <br>
                                                                                 <u>Dong Chen</u>, Fangzhou Liu, Chen Ding, Chucheow Lim<br>
                                                                                 The 30th International Workshop on Languages and Compilers for Parallel Computing</li>
                 </ul>
 
 				<ul>
-                <li class="paper" words="add, your, keywords, here"><a href="#">[TACO'17] Cache Exclusivity and Sharing: Theory and Optimization</a> <br>
+                <li class="paper" words="TACO'17">         <a id="TACO17" href="#">[TACO'17] Cache Exclusivity and Sharing: Theory and Optimization</a> <br>
                                                                                 Chencheng Ye, Chen Ding, Hao Luo, Jacob Brock, <u>Dong Chen</u>, Hai Jin <br>
                                                                                 ACM Transactions on Architecture and Code Optimization</li>
                 </ul>
 				
 				<ul>
-                <li class="paper" words="add, your, keywords, here"><a href="#">[TACO'17] LD: Low-Overhead GPU Race Detection Without Access Monitoring</a> <br>
+                <li class="paper" words="TACO'17">         <a id="TACO17" href="#">[TACO'17] LD: Low-Overhead GPU Race Detection Without Access Monitoring</a> <br>
                                                                                 Pengcheng Li, Xiaoyu Hu, <u>Dong Chen</u>, Jacob Brock, Hao Luo, Eddy Z Zhang, Chen Ding<br>
                                                                                 ACM Transactions on Architecture and Code Optimization</li>
                 </ul>
 
 				<ul>
-                <li class="paper" words="add, your, keywords, here"><a href="#">[MEMSYS'16] Write Locality and Optimization for Persistent Memory</a> <br>
+                <li class="paper" words="MEMSYS'16">       <a id="MEMSYS16" href="#">[MEMSYS'16] Write Locality and Optimization for Persistent Memory</a> <br>
                                                                                 <u>Dong Chen</u>, Chencheng Ye, Chen Ding<br>
                                                                                 The 2nd International Symposium on Memory Systems</li>
                 </ul>
 
 				<ul>
-                <li class="paper" words="add, your, keywords, here"><a href="#">[Euro-Par'14] Automated Transformation of GPU-Specific OpenCL Kernels Targeting Performance Portability on Multi-Core/Many-Core CPUs</a> <br>
+                <li class="paper" words="Euro-Par'14">     <a id="EUROPAR14" href="#">[Euro-Par'14] Automated Transformation of GPU-Specific OpenCL Kernels Targeting Performance Portability on Multi-Core/Many-Core CPUs</a> <br>
                                                                                 Dafei Huang, Mei Wen, Changqing Xun, <u>Dong Chen</u>, Xing Cai, Yuran Qiao, Nan Wu, Chunyuan Zhang<br>
                                                                                 The 20th International European Conference on Parallel and Distributed Computing</li>
                 </ul>
 
 				<ul>
-                <li class="paper" words="add, your, keywords, here"><a href="#">[HPCC'13] Automatic mapping single-device OpenCL program to heterogeneous multi-device platform</a> <br>
+                <li class="paper" words="HPCC'13">         <a id="HPCC13" href="#">[HPCC'13] Automatic mapping single-device OpenCL program to heterogeneous multi-device platform</a> <br>
                                                                                 <u>Dong Chen</u>, Changqing Xun, Dafei Huang, Mei Wen, Chunyuan Zhang<br>
                                                                                 The 15th International Conference on High Performance Computing and Communications</li>
                 </ul>
@@ -203,6 +222,7 @@
 				《The Stranger》Albert Camus,                                                                 《局外人》阿尔贝·加缪<br>
 				《Essays In Love》Alain de Botton,                                                            《爱情笔记》阿兰·德波顿<br>
 				《The Consolations of Philosophy》Alain de Botton,                                            《哲学的慰藉》阿兰·德波顿<br>
+				《Being logical》Dennis Q. Mcinerny,                                                          《简单的逻辑学》D.Q.麦克伦尼<br>
 			</div>            
 
         </div>
