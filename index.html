@@ -84,39 +84,50 @@
 				
 				<!-- <dd><a href="./staticLocalityAnalysis.html"><strong>Static Locality Analysis</strong></a></dd><br/> -->
 				
-				<strong>1. Program Synthesis for Locality Analysis </strong><br/> 			
-				<ul>
+				<strong>1. Program Synthesis for Locality Analysis </strong>
+                <ul>
 				Program synthesis moves programming to a higher level by coding intuitions instead of algorithm details.
 				It also can be seen as extanding compiling with searching, which changes the way we design program optimization passes in compiler.
 				This project is trying to synthesis for static locality analysis. <!-- <a href="https://github.com/dongchen-coder/symRIByInputOuputExamples">Source Code</a> -->
 				</ul>
 
 				<strong>2. Compiler Assigned Reference Leasing</strong> <a href="#LCPC19">[LCPC'19]</a> <a href="#MEMSYS19">[MEMSYS'19]</a> <a href="#MEMSYS20">[MEMSYS'20]</a><br/> 
-				<ul>
+                
+                <ul>
 				Conventional compilers usually optimize cache performance by reducing the memory footprint, as it has limited or no control of the data replacements in cache.
 				This project is trying to enable the fine-grained replacement control by program or compiler with lease cache.
 				A hardware prototype of lease cache and a compiler pass to assign leases for references are designed.<a href="https://github.com/dongchen-coder/CLAM">Source code</a>
 				</ul>
+                
 
 				<strong>3. Static Sampling for Locality Analysis</strong> <a href="#PLDI18">[PLDI'18]</a> <a href="#PPOPP20">[PPoPP'20-poster]</a> <br/>
-				<ul>
+                <details>
+                <summary>Description</summary>
+                <ul>
 				This project builds a compiler tool that predicts the cache performance of compiler-time enumerable loop nests statically.
 				The tool constructs a specialized version of the loops to sampling reuse intervals and it is implemented as a LLVM analysis pass.
 				This technique can also be applied to parallelized loops, such as CUDA kernels and OpenMP. <a href="https://github.com/dongchen-coder/symFP">Source Code</a>
 				</ul>
+                </details>
 
 				<strong>4. Write Locality</strong> <a href="#MEMSYS16">[MEMSYS'16]</a><br/>
+                <details>
+                <summary>Description</summary>
                 <ul>
 				This project proposes a locality model for writebacks. As persistent memory has limited write endurance, quantify writebacks from the cache can guide the optimizations for writes.
 				It provides a linear-time algorithm to analyze writebacks for all all cache sizes and a dynamic programming algorithm to minimize the writebacks for co-run program based on sole-run profiling.
 				<a href="https://github.com/dongchen-coder/tunableOCLbenchmarks/blob/master/utilities/wb.h">Source Code</a>
                 </ul>
+                </details>
 
 				<strong>5. OpenCL Performance Portibility</strong> <a href="#HPCC13">[HPCC'13]</a><a href="#EUROPAR14">[Euro-Par'14]</a> <br/>
+                <details>
+                <summary>Description</summary>
                 <ul>
 				This project targets on different computing devices with different architectures (CPU, GPU, MIC), optimizations to improve performance of OpenCL programs are summarized. 
 				A performance concerned code transformation (from fine-grained program to coarse-grained program) is being studied.
                 </ul>
+                </details>
 
 				Project 1 for now is independent research.<br/>
                 Projects 2,3,4 started before PhD graduation, supervided by (Prof. Chen Ding in University of Rochester).<br/> 
@@ -161,6 +172,8 @@
                                                                                 The 39th ACM SIGPLAN Conference on Programming Language Design and Implementation </li>
                 </ul>
 		
+                <details>
+                <summary>More...</summary>
 				<ul>
                 <li class="paper" words="LCPC'17">         <a id="LCPC17" href="https://link.springer.com/book/10.1007/978-3-030-35225-7">[LCPC'17] POSTER: Static Reuse Time Analysis Using Dependence Distance</a> <br>
                                                                                 <u>Dong Chen</u>, Fangzhou Liu, Chen Ding, Chucheow Lim<br>
@@ -197,7 +210,7 @@
                                                                                 <u>Dong Chen</u>, Changqing Xun, Dafei Huang, Mei Wen, Chunyuan Zhang<br>
                                                                                 The 15th International Conference on High Performance Computing and Communications</li>
                 </ul>
-
+                </details>
 				<!--
                 <strong>Technical Reports</strong><br/>
                 <ul>
@@ -209,6 +222,8 @@
 
 			<div class="col-md-8" style="height: 100vh;"> 
                 <h2 id="fun">Fun</h2>
+                <details>
+                <summary>Books</summary>
 				《The Burnout Society》Byung-Chul Han,                                                        《倦怠社会》韩炳哲<br>
 				《The Transparency Society》Byung-Chul Han,                                                   《透明社会》韩炳哲<br>
 				《The Agony of Eros》Byung-Chul Han,                                                          《爱欲之死》韩炳哲<br>
@@ -232,7 +247,8 @@
 				《The Wasp That Brainwashed the Caterpillar》Matt Simon,                                      《疯狂的进化》马特·西蒙<br>
 				《Of Mice and Men》John Steinbeck，                 										  《人鼠之间》约翰·斯坦贝克<br>
 				《Anatomy of Love: A Natural History of Mating, Marriage, and Why We Stray》Helen Fisher,     《我们为何结婚，又为何不忠》海伦·费舍尔 <br>
-				 <a href="https://info.flagcounter.com/UKS7"><img src="https://s01.flagcounter.com/count/UKS7/bg_40F9FF/txt_000000/border_0B04CC/columns_8/maxflags_16/viewers_0/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+				 </details>
+                 <a href="https://info.flagcounter.com/UKS7"><img src="https://s01.flagcounter.com/count/UKS7/bg_40F9FF/txt_000000/border_0B04CC/columns_8/maxflags_16/viewers_0/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
 			</div>            
 
         </div>
