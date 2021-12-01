@@ -22,11 +22,11 @@
     <nav class="navbar navbar-inverse">
       <div class="container">
 		<ul class="nav navbar-nav">
-              <li><a href="/">Home</a></li>
-              <li><a href="#projects">Projects</a></li>
-              <li><a href="#publications">Publications</a></li> 
-              <li><a href="#fun">Fun</a></li>
-			  <li><a href="files/cv_dchen.pdf">CV</a></li> 
+              <li><a><b>Home</b></a></li>
+              <li><a href="./pages/projects.html">Projects</a></li>
+              <li><a href="./pages/publications.html">Publications</a></li>
+              <li><a href="./pages/fun.html">Fun</a></li>
+			  <li><a href="./files/cv_dchen.pdf">CV</a></li> 
 		</ul>
 	  </div>
 	</nav>
@@ -41,9 +41,7 @@
             <!-- Entries Column -->
             <div class="col-md-8" style="height: 100vh;">
                 
-                <!-- Main Image
-                <img class="img-responsive" src="dongChen.png" width="42" alt=""><br>
-				-->                
+                <!-- img class="img-responsive" src="dongChen.png" width="42" alt=""><br -->
                 
                 <div style="margin-top:3%; text-align:justify;">                
 					<p> My current research focuses on 
@@ -78,188 +76,8 @@
               <dd><a href="https://github.com/dongchen-coder">GitHub</a></dd>
 			</div>
             
-			<!-- Projects -->
-            <div class="col-md-8" style="height: 100vh; overflow: auto;">
-                <h2 id="projects">Projects</h2>
-				
-				<!-- <dd><a href="./staticLocalityAnalysis.html"><strong>Static Locality Analysis</strong></a></dd><br/> -->
-				
-				<strong>1. Program Synthesis for Locality Analysis </strong>
-                <ul>
-				Program synthesis moves programming to a higher level by coding intuitions instead of algorithm details.
-				It also can be seen as extanding compiling with searching, which changes the way we design program optimization passes in compiler.
-				This project is trying to synthesis for static locality analysis. <!-- <a href="https://github.com/dongchen-coder/symRIByInputOuputExamples">Source Code</a> -->
-				</ul>
-
-				<strong>2. Compiler Assigned Reference Leasing</strong> <a href="#LCPC19">[LCPC'19]</a> <a href="#MEMSYS19">[MEMSYS'19]</a> <a href="#MEMSYS20">[MEMSYS'20]</a> <a href="#ISMM21">[ISMM'21]</a><br/> 
-                
-                <ul>
-				Conventional compilers usually optimize cache performance by reducing the memory footprint, as it has limited or no control of the data replacements in cache.
-				This project is trying to enable the fine-grained replacement control by program or compiler with lease cache.
-				A hardware prototype of lease cache and a compiler pass to assign leases for references are designed.<a href="https://github.com/dongchen-coder/CLAM">Source code</a>
-				</ul>
-                
-
-				<strong>3. Static Sampling for Locality Analysis</strong> <a href="#PLDI18">[PLDI'18]</a> <a href="#PPOPP20">[PPoPP'20-poster]</a> <br/>
-                <details>
-                <summary>Description</summary>
-                <ul>
-				This project builds a compiler tool that predicts the cache performance of compiler-time enumerable loop nests statically.
-				The tool constructs a specialized version of the loops to sampling reuse intervals and it is implemented as a LLVM analysis pass.
-				This technique can also be applied to parallelized loops, such as CUDA kernels and OpenMP. <a href="https://github.com/dongchen-coder/symFP">Source Code</a>
-				</ul>
-                </details>
-
-				<strong>4. Write Locality</strong> <a href="#MEMSYS16">[MEMSYS'16]</a><br/>
-                <details>
-                <summary>Description</summary>
-                <ul>
-				This project proposes a locality model for writebacks. As persistent memory has limited write endurance, quantify writebacks from the cache can guide the optimizations for writes.
-				It provides a linear-time algorithm to analyze writebacks for all all cache sizes and a dynamic programming algorithm to minimize the writebacks for co-run program based on sole-run profiling.
-				<a href="https://github.com/dongchen-coder/tunableOCLbenchmarks/blob/master/utilities/wb.h">Source Code</a>
-                </ul>
-                </details>
-
-				<strong>5. OpenCL Performance Portibility</strong> <a href="#HPCC13">[HPCC'13]</a><a href="#EUROPAR14">[Euro-Par'14]</a> <br/>
-                <details>
-                <summary>Description</summary>
-                <ul>
-				This project targets on different computing devices with different architectures (CPU, GPU, MIC), optimizations to improve performance of OpenCL programs are summarized. 
-				A performance concerned code transformation (from fine-grained program to coarse-grained program) is being studied.
-                </ul>
-                </details>
-
-				Project 1 for now is independent research.<br/>
-                Projects 2,3,4 started before PhD graduation, supervided by (Prof. Chen Ding in University of Rochester).<br/> 
-                Project 5 is master's work in NUDT and stopped before PhD.<br/>
-
-			</div> 
-
-           
-            <!-- Publications -->
-            <div class="col-md-8" style="height: 120vh; overflow: auto;">    
-                <h2 id="publications">Publications</h2>
-                
-                <strong>Selected Publications, the full list can be found in <a href="https://scholar.google.com/citations?user=FJcl9EEAAAAJ&hl=en">Google Scholar</a></strong><br/>
-
-                <ul>
-                <li class="paper" words="ISMM21">         <a id="ISMM21" href="#">[ISMM'21] Uniform Lease vs LRU Cache: Analysis and Evaluation</a> <br>
-                                                                                <u>Dong Chen</u>, Chen Ding, Fangzhou Liu, Benjamin Raber, Wesley Smith, and Pengcheng Li<br>
-                                                                                2021 ACM SIGPLAN International Symposium on Memory Management</li>
-                </ul>
-				
-				<ul>
-				<li class="paper" words="MEMSYS20">         <a id="MEMSYS20" href="#">[MEMSYS'20] CLAM: Compiler Lease of Cache Memory</a> <br>
-                                                                                Ian Prechtl, Ben Reber, Chen Ding, Dorin Patru, <u>Dong Chen</u> <br>
-                                                                                The 6th International Symposium on Memory Systems </li>
-				</ul>
-
-				<ul>
-                <li class="paper" words="PPoPP20">         <a id="PPOPP20" href="https://dl.acm.org/doi/abs/10.1145/3332466.3374510">[PPoPP'20-poster] PLUM: static parallel program locality analysis under uniform multiplexing</a> <br>
-                                                                                Fangzhou Liu, <u>Dong Chen</u>, Wesley Smith, Chen Ding <br>
-                                                                                the 25th ACM SIGPLAN Symposium on Principles and Practice of Parallel Programming </li>
-                </ul>
-
-				<ul>
-                <li class="paper" words="LCPC'19">         <a id="LCPC19" href="https://link.springer.com/chapter/10.1007/978-3-030-72789-5_7">[LCPC'19] CLAM: Compiler Leasing of Accelerator Memory</a> <br>
-																				Chen Ding, <u>Dong Chen</u>, Dorin Patru <br>
-																				The 32nd Workshop on Languages and Compilers for Parallel Computing </li>
-				</ul>
-				
-				<ul>
-				<li class="paper" words="MEMSYS'19">       <a id="MEMSYS19" href="https://dl.acm.org/doi/10.1145/3357526.3357557">[MEMSYS'19] Statistical Caching for Near Memory Management</a> <br>
-                                                                                <u>Dong Chen</u>, Fangzhou Liu, Mingyang Jiao, Chen Ding, Sreepathi Pai <br>
-                                                                                The 5th International Symposium on Memory Systems</li>
-				</ul>
-			
-				<ul>
-                <li class="paper" words="PLDI'18">         <a id="PLDI18" href="https://dl.acm.org/doi/10.1145/3192366.3192402">[PLDI'18] Locality Analysis through Static Parallel Sampling</a> <br>
-                                                                                <u>Dong Chen</u>, Fangzhou Liu, Chen Ding, Sreepathi Pai<br>
-                                                                                The 39th ACM SIGPLAN Conference on Programming Language Design and Implementation </li>
-                </ul>
-		
-                <details>
-                <summary>More...</summary>
-				<ul>
-                <li class="paper" words="LCPC'17">         <a id="LCPC17" href="https://link.springer.com/book/10.1007/978-3-030-35225-7">[LCPC'17] POSTER: Static Reuse Time Analysis Using Dependence Distance</a> <br>
-                                                                                <u>Dong Chen</u>, Fangzhou Liu, Chen Ding, Chucheow Lim<br>
-                                                                                The 30th International Workshop on Languages and Compilers for Parallel Computing</li>
-                </ul>
-
-				<ul>
-                <li class="paper" words="TACO'17">         <a id="TACO17" href="https://dl.acm.org/doi/10.1145/3134437">[TACO'17] Cache Exclusivity and Sharing: Theory and Optimization</a> <br>
-                                                                                Chencheng Ye, Chen Ding, Hao Luo, Jacob Brock, <u>Dong Chen</u>, Hai Jin <br>
-                                                                                ACM Transactions on Architecture and Code Optimization</li>
-                </ul>
-				
-				<ul>
-                <li class="paper" words="TACO'17">         <a id="TACO17" href="https://dl.acm.org/doi/10.1145/3046678">[TACO'17] LD: Low-Overhead GPU Race Detection Without Access Monitoring</a> <br>
-                                                                                Pengcheng Li, Xiaoyu Hu, <u>Dong Chen</u>, Jacob Brock, Hao Luo, Eddy Z Zhang, Chen Ding<br>
-                                                                                ACM Transactions on Architecture and Code Optimization</li>
-                </ul>
-
-				<ul>
-                <li class="paper" words="MEMSYS'16">       <a id="MEMSYS16" href="https://dl.acm.org/doi/10.1145/2989081.2989119">[MEMSYS'16] Write Locality and Optimization for Persistent Memory</a> <br>
-                                                                                <u>Dong Chen</u>, Chencheng Ye, Chen Ding<br>
-                                                                                The 2nd International Symposium on Memory Systems</li>
-                </ul>
-
-				<ul>
-                <li class="paper" words="Euro-Par'14">     <a id="EUROPAR14" href="https://link.springer.com/chapter/10.1007/978-3-319-09873-9_18">
-																			    [Euro-Par'14] Automated Transformation of GPU-Specific OpenCL Kernels Targeting Performance Portability on Multi-Core/Many-Core CPUs</a> <br>
-                                                                                Dafei Huang, Mei Wen, Changqing Xun, <u>Dong Chen</u>, Xing Cai, Yuran Qiao, Nan Wu, Chunyuan Zhang<br>
-                                                                                The 20th International European Conference on Parallel and Distributed Computing</li>
-                </ul>
-
-				<ul>
-                <li class="paper" words="HPCC'13">         <a id="HPCC13" href="https://ieeexplore.ieee.org/document/6825555">[HPCC'13] Automatic mapping single-device OpenCL program to heterogeneous multi-device platform</a> <br>
-                                                                                <u>Dong Chen</u>, Changqing Xun, Dafei Huang, Mei Wen, Chunyuan Zhang<br>
-                                                                                The 15th International Conference on High Performance Computing and Communications</li>
-                </ul>
-                </details>
-				<!--
-                <strong>Technical Reports</strong><br/>
-                <ul>
-                <li class="paper" words="add, your, keywords, here"><a href="#">Full title</a>. Details of the report</li>
-                </ul>
-				-->
-
-            </div>
-
-			<div class="col-md-8" style="height: 100vh; overflow: auto;"> 
-                <h2 id="fun">Fun</h2>
-                <details>
-                <summary>Books</summary>
-				《The Burnout Society》Byung-Chul Han,                                                        《倦怠社会》韩炳哲<br>
-				《The Transparency Society》Byung-Chul Han,                                                   《透明社会》韩炳哲<br>
-				《The Agony of Eros》Byung-Chul Han,                                                          《爱欲之死》韩炳哲<br>
-				《Topology of Violence》Byung-Chul Han,                                                       《暴力拓扑学》韩炳哲<br>
-				《Good Entertainment: A Deconstruction of the Western Passion Narrative》Byung-Chul Han,      《娱乐何为》韩炳哲<br>
-				《In the Swarm: Digital Prospects》Byung-Chul Han,                                            《在群中：数字媒体时代的大众心理学》韩炳哲<br>
-				《All God's Children Can Dance》Haruki Murakami,                                              《神的孩子全跳舞》村上春树<br>
-				《Men Without Women: Stories》Haruki Murakami,                                                《没有女人的男人们》村上春树<br>
-				《What I Talk About When I Talk About Running: A Memoir》Haruki Murakami,                     《当我跑步时，我在谈些什么》村上春树<br>
-				《The Elephant Vanishes: Stories》Haruki Murakami,                                            《象场喜剧》村上春树<br>
-				《My Profession is a Novelist》Haruki Murakami,                                               《我的职业是小说家》村上春树<br>
-				《The Deal of a Lifetime: A Novella》Fredrik Backman,                                         《时间的礼物》弗雷德里克·巴克曼<br>
-				《Kokoro》Natsume Soseki,                                                                     《心》夏目漱石<br>
-				《Silent Majority》Xiaobo Wang,                                                               《沉默的大多数》王小波<br>
-				《The Man Who Mistook His Wife For A Hat: And Other Clinical Tales》Oliver Sacks,             《错把妻子当帽子》奥利弗·萨克斯<br>
-				《Nonviolent Communication》Marshall B. Rosenberg,                                            《非暴力沟通》马歇尔·卢森堡<br>
-				《The Stranger》Albert Camus,                                                                 《局外人》阿尔贝·加缪<br>
-				《Essays In Love》Alain de Botton,                                                            《爱情笔记》阿兰·德波顿<br>
-				《The Consolations of Philosophy》Alain de Botton,                                            《哲学的慰藉》阿兰·德波顿<br>
-				《Being logical》Dennis Q. Mcinerny,                                                          《简单的逻辑学》D.Q.麦克伦尼<br>
-				《The Wasp That Brainwashed the Caterpillar》Matt Simon,                                      《疯狂的进化》马特·西蒙<br>
-				《Of Mice and Men》John Steinbeck，                 										  《人鼠之间》约翰·斯坦贝克<br>
-				《Anatomy of Love: A Natural History of Mating, Marriage, and Why We Stray》Helen Fisher,     《我们为何结婚，又为何不忠》海伦·费舍尔 <br>
-                《The Social Contract》Jean-Jacques Rousseau,                                                 《社会契约论》让-雅克·卢梭 <br>
-				 </details>
-                 <a href="https://info.flagcounter.com/UKS7"><img src="https://s01.flagcounter.com/count/UKS7/bg_40F9FF/txt_000000/border_0B04CC/columns_8/maxflags_16/viewers_0/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
-			</div>            
-
+            <a href="https://info.flagcounter.com/UKS7"><img src="https://s01.flagcounter.com/count/UKS7/bg_40F9FF/txt_000000/border_0B04CC/columns_8/maxflags_16/viewers_0/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>  
         </div>
-
     </div>
     <!-- /.container -->
     
