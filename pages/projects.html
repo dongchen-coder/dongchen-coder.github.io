@@ -41,72 +41,93 @@
 			<!-- Projects -->
             <div class="col-md-8" style="height: 100vh; overflow: auto;">
                 <h2 id="projects">Projects</h2>
-				
-				<!-- <dd><a href="./staticLocalityAnalysis.html"><strong>Static Locality Analysis</strong></a></dd><br/> -->
-				
-				<strong>1. Program Synthesis for Locality Analysis</strong> <a href="./publicatiions.html#DRAFT">[DRAFT]</a>
-                <ul>
-				Program synthesis moves programming to a higher level by coding intuitions instead of algorithm details.
-				It also can be seen as extanding compiling with searching, which changes the way we design program optimization passes in compiler.
-				This project is trying to synthesis for static locality analysis. <a href="https://github.com/dongchen-coder/symRIByInputOuputExamples">Source Code</a>
-				</ul>
 
-                <strong>2. Resolving Complex Software Engineering tasks with LLMs</strong> [<a href="./publications.html#TechReport24">TechReport'24</a>, <a href="./publications.html#Arxiv24">Arxiv'24</a>, <a href="./publications.html#LMPL@SPLASH25">LMPL@SPLASH'25</a>]
-                <details>
-                <summary>Description</summary>
+                <strong>1. SLM Training (Team Leader)</strong> <span class="text-muted">2025.06&ndash;</span>
                 <ul>
-                With the advance of language models, complex software engineering tasks described in natrual languages become addressable. 
-                The projects explore LLMs' potential to 
-                (1) generate the entire repository from its requirement 
-                (2) to generate patches from issue descriptions and 
-                (3) to assist call graph construction.
+                    <li>RL, fine-tuning, continuous pre-training, evaluation with Qwen3 models for running performance summarization.</li>
+                    <li>Investigating structured pruning and new model architectures (RWKV, Mamba, mixture-of-lookup-experts) for edge devices.</li>
                 </ul>
-                </details>
 
-				<strong>3. Compiler Assigned Reference Leasing</strong> <a href="./publications.html#LCPC19">[LCPC'19]</a> <a href="./publications.html#MEMSYS19">[MEMSYS'19]</a> <a href="./publications.html#MEMSYS20">[MEMSYS'20]</a> <a href="./publications.html#ISMM21">[ISMM'21]</a> <a href="./publications.html#TACO21">[TACO'21]</a> <br/>
-                <details>
-                <summary>Description</summary>
+                <strong>2. LLM Infra (Team Leader)</strong>
+                <a href="publications.html#DATE26">[DATE'26]</a>
+                <span class="text-muted">2025.01&ndash;</span>
                 <ul>
-				Conventional compilers usually optimize cache performance by reducing the memory footprint, as it has limited or no control of the data replacements in cache.
-				This project is trying to enable the fine-grained replacement control by program or compiler with lease cache.
-				A hardware prototype of lease cache and a compiler pass to assign leases for references are designed. <a href="https://github.com/dongchen-coder/CLAM">Source code</a>
-				</ul>
-                </details>
-                
-
-				<strong>4. Static Sampling for Locality Analysis</strong> <a href="./publications.html#PLDI18">[PLDI'18]</a> <a href="./publications.html#PPOPP20">[PPoPP'20-poster]</a> <br/>
-                <details>
-                <summary>Description</summary>
-                <ul>
-				This project builds a compiler tool that predicts the cache performance of compiler-time enumerable loop nests statically.
-				The tool constructs a specialized version of the loops to sampling reuse intervals and it is implemented as a LLVM analysis pass.
-				This technique can also be applied to parallelized loops, such as CUDA kernels and OpenMP. <a href="https://github.com/dongchen-coder/symFP">Source Code</a>
-				</ul>
-                </details>
-
-				<strong>5. Write Locality</strong> <a href="./publications.html#MEMSYS16">[MEMSYS'16]</a><br/>
-                <details>
-                <summary>Description</summary>
-                <ul>
-				This project proposes a locality model for writebacks. As persistent memory has limited write endurance, quantify writebacks from the cache can guide the optimizations for writes.
-				It provides a linear-time algorithm to analyze writebacks for all all cache sizes and a dynamic programming algorithm to minimize the writebacks for co-run program based on sole-run profiling.
-				<a href="https://github.com/dongchen-coder/tunableOCLbenchmarks/blob/master/utilities/wb.h">Source Code</a>
+                    <li>Auto-tuning framework for triton-based kernels with dynamic shapes, integrated into the vLLM framework and evaluated on LLaMA3.1 and Qwen3 models, achieving average end-to-end speedups of 1.37&times; and 1.42&times; respectively, under dynamic batching workloads.</li>
+                    <li>Implementing a tile-level distributed computation and communication-overlapping inference/training framework for dense/MoE models.</li>
                 </ul>
-                </details>
 
-				<strong>6. OpenCL Performance Portibility</strong> <a href="./publications.html#HPCC13">[HPCC'13]</a><a href="./publications.html#EUROPAR14">[Euro-Par'14]</a> <br/>
-                <details>
-                <summary>Description</summary>
+                <strong>3. Coding Agent and Program Synthesis</strong>
+                <a href="publications.html#ICSE-SEIP26">[ICSE-SEIP'26]</a>,
+                <a href="publications.html#ACLFindings25">[ACL-findings'25]</a>,
+                <a href="publications.html#LMPL@SPLASH25">[LMPL'25]</a>,
+                <a href="publications.html#TOSEM24">[TOSEM'24]</a>,
+                <a href="publications.html#TechReport24">[TechReport'24]</a>,
+                <a href="publications.html#SWEbenchJava24">[TechReport'24]</a>,
+                <a href="publications.html#AdaptiveRetrieval24">[TechReport'24]</a>,
+                <a href="publications.html#Arxiv24">[Arxiv'24]</a>,
+                <a href="publications.html#DRAFT">[DRAFT]</a>
+                <span class="text-muted">2024.01&ndash;</span>
                 <ul>
-				This project targets on different computing devices with different architectures (CPU, GPU, MIC), optimizations to improve performance of OpenCL programs are summarized. 
-				A performance concerned code transformation (from fine-grained program to coarse-grained program) is being studied.
+                    <li><strong>GPU Kernel Optimization:</strong> Designed a Monte Carlo Tree Search (MCTS)&ndash;based agent for automated GPU kernel optimization.</li>
+                    <li><strong>Automatic GitHub Issue Resolution:</strong> Developed a task-graph&ndash;based multi-agent framework enabling precise plan execution; achieved state-of-the-art performance on SWE-bench-lite, resolving 28.33% of issues (June 4&ndash;17, 2024).</li>
+                    <li><strong>Program Synthesis for Locality Analysis:</strong> Proposed and implemented an input&ndash;output&ndash;example&ndash;driven, syntax-guided synthesis framework for program locality analysis; designed a domain-specific language (DSL) and a unification-based search algorithm to efficiently explore the program space.</li>
                 </ul>
+
+                <strong>4. Static Analysis for Memory Safety</strong> <span class="text-muted">2022.05&ndash;2024.12</span>
+                <details>
+                    <summary>Details</summary>
+                    <ul>
+                        <li>Explores techniques to reason about program properties automatically (sparse-value flow analysis, abstract interpretation, etc).</li>
+                        <li>Implements tools to identify memory bugs for large-scale industrial codes, such as null pointer dereference, memory leaks, etc.</li>
+                    </ul>
                 </details>
 
-				<!-- Project 1 for now is independent research.<br/>
-                Projects 2,3,4 started before PhD graduation, supervided by (Prof. Chen Ding in University of Rochester).<br/> 
-                Project 5 is master's work in NUDT and stopped before PhD.<br/>
-                -->
+                <strong>5. Compiler Leasing</strong>
+                <a href="publications.html#TACO22">[TACO'22]</a>,
+                <a href="publications.html#ISMM21">[ISMM'21]</a>
+                <span class="text-muted">2019.01&ndash;2022.12</span>
+                <details>
+                    <summary>Details</summary>
+                    <ul>
+                        <li>Proposes a framework that enables fine-grained control of data replacements in a cache by a compiler.</li>
+                        <li>Designs and implements an algorithm to derive optimal leases for each reference in a program to minimize cache misses.</li>
+                    </ul>
+                </details>
+
+                <strong>6. Static Sampling for Locality Analysis</strong>
+                <a href="publications.html#PLDI18">[PLDI'18]</a>,
+                <a href="publications.html#PPOPP20">[PPoPP'20-poster]</a>
+                <span class="text-muted">2018.05&ndash;2021.12</span>
+                <details>
+                    <summary>Details</summary>
+                    <ul>
+                        <li>Designs and implements an LLVM compiler pass that predicts the cache performance of loop nests.</li>
+                        <li>Specializes loops to enable static profiling of reuse intervals.</li>
+                    </ul>
+                </details>
+
+                <strong>7. Write Locality</strong>
+                <a href="publications.html#MEMSYS16">[MEMSYS'16]</a>
+                <span class="text-muted">2016.01&ndash;2016.12</span>
+                <details>
+                    <summary>Details</summary>
+                    <ul>
+                        <li>Designs and implements a linear-time algorithm to model cache writebacks from the memory access trace of a program.</li>
+                        <li>Implements a scheduling algorithm to minimize writebacks by grouping co-running programs, with the writeback model.</li>
+                    </ul>
+                </details>
+
+                <strong>8. OpenCL Performance Portability</strong>
+                <a href="publications.html#HPCC13">[HPCC'13]</a>,
+                <a href="publications.html#EUROPAR14">[Euro-Par'14]</a>
+                <span class="text-muted">2012.01&ndash;2013.12</span>
+                <details>
+                    <summary>Details</summary>
+                    <ul>
+                        <li>Designs a source-to-source translator based on LLVM infrastructure.</li>
+                        <li>Automatically transforms OpenCL kernels for GPU with fine-grained parallelism to vectorized code for CPU.</li>
+                    </ul>
+                </details>
 			</div> 
 
         </div>
