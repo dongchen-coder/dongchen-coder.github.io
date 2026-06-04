@@ -42,21 +42,7 @@
             <div class="col-md-8" style="height: 100vh; overflow: auto;">
                 <h2 id="projects">Projects</h2>
 
-                <strong>1. SLM Training (Team Leader)</strong> <span class="text-muted">2025.06&ndash;</span>
-                <ul>
-                    <li>RL, fine-tuning, continuous pre-training, evaluation with Qwen3 models for running performance summarization.</li>
-                    <li>Investigating structured pruning and new model architectures (RWKV, Mamba, mixture-of-lookup-experts) for edge devices.</li>
-                </ul>
-
-                <strong>2. LLM Infra (Team Leader)</strong>
-                <a href="publications.html#DATE26">[DATE'26]</a>
-                <span class="text-muted">2025.01&ndash;</span>
-                <ul>
-                    <li>Auto-tuning framework for triton-based kernels with dynamic shapes, integrated into the vLLM framework and evaluated on LLaMA3.1 and Qwen3 models, achieving average end-to-end speedups of 1.37&times; and 1.42&times; respectively, under dynamic batching workloads.</li>
-                    <li>Implementing a tile-level distributed computation and communication-overlapping inference/training framework for dense/MoE models.</li>
-                </ul>
-
-                <strong>3. Coding Agent and Program Synthesis</strong>
+                <strong>1. Coding Agent and Program Synthesis</strong>
                 <a href="publications.html#ICSE-SEIP26">[ICSE-SEIP'26]</a>,
                 <a href="publications.html#ACLFindings25">[ACL-findings'25]</a>,
                 <a href="publications.html#LMPL@SPLASH25">[LMPL'25]</a>,
@@ -64,13 +50,26 @@
                 <a href="publications.html#TechReport24">[TechReport'24]</a>,
                 <a href="publications.html#SWEbenchJava24">[TechReport'24]</a>,
                 <a href="publications.html#AdaptiveRetrieval24">[TechReport'24]</a>,
-                <a href="publications.html#Arxiv24">[Arxiv'24]</a>,
                 <a href="publications.html#DRAFT">[DRAFT]</a>
                 <span class="text-muted">2024.01&ndash;</span>
                 <ul>
                     <li><strong>GPU Kernel Optimization:</strong> Designed a Monte Carlo Tree Search (MCTS)&ndash;based agent for automated GPU kernel optimization.</li>
                     <li><strong>Automatic GitHub Issue Resolution:</strong> Developed a task-graph&ndash;based multi-agent framework enabling precise plan execution; achieved state-of-the-art performance on SWE-bench-lite, resolving 28.33% of issues (June 4&ndash;17, 2024).</li>
                     <li><strong>Program Synthesis for Locality Analysis:</strong> Proposed and implemented an input&ndash;output&ndash;example&ndash;driven, syntax-guided synthesis framework for program locality analysis; designed a domain-specific language (DSL) and a unification-based search algorithm to efficiently explore the program space.</li>
+                </ul>
+
+                <strong>2. LLM Infra (Team Leader)</strong>
+                <a href="publications.html#DATE26">[DATE'26]</a>
+                <span class="text-muted">2025.01&ndash;2026.04</span>
+                <ul>
+                    <li>Developed a learned configuration generator for dynamic-shape Triton GEMM kernels, integrated with vLLM to deliver 1.37&times;/1.42&times; average end-to-end latency speedups on LLaMA-3.1/Qwen3 dynamic-batching workloads.</li>
+                    <li>Implementing a tile-level distributed computation and communication overlapping inference/training framework for dense/MoE models.</li>
+                </ul>
+
+                <strong>3. SLM Training (Team Leader)</strong> <span class="text-muted">2025.06&ndash;2026.04</span>
+                <ul>
+                    <li>RL, finetuning, continuous pre-training, evaluation with Qwen3 models for endurance running activity summarization, using synthetic Huawei Watch-style wearable data.</li>
+                    <li>Investigating structure pruning and new model architectures (ds-v3.2, qwen3-next, mixtrue-of-lookup-experts) for edge devices.</li>
                 </ul>
 
                 <strong>4. Static Analysis for Memory Safety</strong> <span class="text-muted">2022.05&ndash;2024.12</span>
