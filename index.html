@@ -13,6 +13,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css">
   <link href='https://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
+  <style>
+  summary {
+      cursor: pointer;
+      list-style: none;
+  }
+
+  summary::-webkit-details-marker {
+      display: none;
+  }
+
+  summary::before {
+      content: "\25B8";
+      display: inline-block;
+      width: 1em;
+  }
+
+  details[open] > summary::before {
+      content: "\25BE";
+  }
+  </style>
 </head>
 
 <body>

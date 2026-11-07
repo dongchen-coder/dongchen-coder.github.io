@@ -27,6 +27,33 @@
   .highlight:hover {
       background-size: 100% 88%;
   }
+
+  summary {
+      cursor: pointer;
+      list-style: none;
+  }
+
+  summary::-webkit-details-marker {
+      display: none;
+  }
+
+  summary::before {
+      content: "\25B8";
+      display: inline-block;
+      width: 1em;
+  }
+
+  details[open] > summary::before {
+      content: "\25BE";
+  }
+
+  summary::before {
+      font-size: 30px;
+  }
+
+  summary h2 {
+      display: inline-block;
+  }
   </style>
 
 
